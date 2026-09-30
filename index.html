@@ -3,139 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tiny Wonders en Español</title>
+
+  <title>Tiny Wonders ✨ | Aventuras increíbles</title>
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #e8f7ff, #ffffff);
+      background: #f4fbff;
       color: #17324d;
+      line-height: 1.6;
     }
 
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #7ddcff, #b9f3ff);
+    /* MENÚ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 48px;
-    }
-
-    header p {
-      font-size: 20px;
-      margin-top: 15px;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .welcome {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .welcome h2 {
-      font-size: 32px;
-    }
-
-    .adventure {
-      background: white;
-      border-radius: 20px;
-      padding: 30px;
-      margin-bottom: 25px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    }
-
-    .adventure h3 {
-      font-size: 25px;
-      margin-top: 0;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 22px;
-      background: #39bdf8;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
+    .logo {
+      font-size: 24px;
       font-weight: bold;
-      margin-top: 10px;
     }
 
-    .button:hover {
-      background: #159bd6;
+    nav a {
+      text-decoration: none;
+      color: #17324d;
+      margin-left: 18px;
+      font-weight: bold;
     }
 
-    footer {
+    /* PORTADA */
+    .hero {
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 30px 20px;
-      background: #17324d;
-      color: white;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <h1>✨ Tiny Wonders ✨</h1>
-    <p>¡Pequeñas aventuras, grandes descubrimientos!</p>
-  </header>
-
-  <main class="container">
-
-    <section class="welcome">
-      <h2>🌎 Bienvenidos a Tiny Wonders</h2>
-      <p>
-        Acompaña a Tiny en aventuras increíbles por mundos mágicos,
-        lugares sorprendentes y descubrimientos que parecen imposibles.
-      </p>
-    </section>
-
-    <section class="adventure">
-      <h3>🐋 La ballena gigante de cristal</h3>
-      <p>
-        Tiny descubre una enorme ballena hecha completamente de cristal
-        y se prepara para vivir una aventura extraordinaria.
-      </p>
-      <a href="#" class="button">Ver aventura</a>
-    </section>
-
-    <section class="adventure">
-      <h3>🏔️ La montaña de cristal</h3>
-      <p>
-        Tiny encuentra una misteriosa montaña de cristal escondida
-        en un mundo lleno de magia.
-      </p>
-      <a href="#" class="button">Ver aventura</a>
-    </section>
-
-    <section class="adventure">
-      <h3>🦖 El parque de dinosaurios bebés</h3>
-      <p>
-        Tiny entra en un parque lleno de pequeños dinosaurios
-        y descubre un lugar completamente sorprendente.
-      </p>
-      <a href="#" class="button">Ver aventura</a>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>© 2026 Tiny Wonders en Español</p>
-    <p>✨ Aventuras creadas con imaginación y tecnología de IA ✨</p>
-  </footer>
-
-</body>
-</html>
+      padding: 60
