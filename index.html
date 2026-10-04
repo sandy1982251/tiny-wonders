@@ -1,815 +1,273 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Tiny Wonders ✨</title>
-
 <style>
-
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
-
-html {
-scroll-behavior: smooth;
-}
-
-body {
-font-family: Arial, sans-serif;
-background: #f4fbff;
-color: #17324d;
-}
-
-nav {
-background: white;
-padding: 18px;
-text-align: center;
-box-shadow: 0 3px 15px rgba(0,0,0,.1);
-position: sticky;
-top: 0;
-z-index: 10;
-}
-
-.logo {
-font-size: 27px;
-font-weight: bold;
-margin-bottom: 10px;
-}
-
-nav a {
-color: #17324d;
-text-decoration: none;
-margin: 0 10px;
-font-weight: bold;
-}
-
-.hero {
-min-height: 600px;
-padding: 80px 20px;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-background: linear-gradient(135deg, #65d9ff, #a9efd0, #fff0a5);
-}
-
-.hero-content {
-max-width: 800px;
-}
-
-.hero h1 {
-font-size: 70px;
-margin-bottom: 20px;
-}
-
-.hero h2 {
-font-size: 38px;
-margin-bottom: 20px;
-}
-
-.hero p {
-font-size: 20px;
-margin-bottom: 30px;
-}
-
-.main-button,
-.button {
-display: inline-block;
-background: #17324d;
-color: white;
-text-decoration: none;
-padding: 14px 25px;
-border-radius: 30px;
-font-weight: bold;
-}
-
-.button {
-margin-top: 10px;
-}
-
-section {
-padding: 70px 20px;
-}
-
-.container {
-max-width: 1100px;
-margin: auto;
-}
-
-.section-title {
-text-align: center;
-font-size: 40px;
-margin-bottom: 15px;
-}
-
-.section-description {
-text-align: center;
-max-width: 700px;
-margin: 0 auto 40px;
-font-size: 18px;
-}
-
-.cards {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 25px;
-}
-
-.card {
-background: white;
-padding: 30px;
-border-radius: 25px;
-text-align: center;
-box-shadow: 0 8px 25px rgba(0,0,0,.08);
-}
-
-.emoji {
-font-size: 65px;
-margin-bottom: 15px;
-}
-
-.card h3 {
-font-size: 24px;
-margin-bottom: 12px;
-}
-
-.card p {
-margin-bottom: 20px;
-}
-
-.videos {
-background: #e8f8ff;
-}
-
-.video-box {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 30px;
-}
-
-.video-card {
-background: white;
-padding: 30px 20px;
-border-radius: 25px;
-text-align: center;
-box-shadow: 0 8px 25px rgba(0,0,0,.08);
-}
-
-.video-icon {
-font-size: 75px;
-margin-bottom: 20px;
-}
-
-.video-card h3 {
-font-size: 22px;
-margin-bottom: 15px;
-}
-
-.video-card p {
-margin-bottom: 20px;
-}
-
-.languages {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 25px;
-}
-
-.language {
-background: white;
-padding: 35px 20px;
-border-radius: 25px;
-text-align: center;
-box-shadow: 0 8px 25px rgba(0,0,0,.08);
-}
-
-.ai {
-background: #fff8d8;
-text-align: center;
-}
-
-.ai p {
-max-width: 750px;
-margin: auto;
-font-size: 17px;
-}
-
-footer {
-background: #17324d;
-color: white;
-text-align: center;
-padding: 40px 20px;
-}
-
-footer p {
-margin: 8px;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: Arial, sans-serif; background: #f4fbff; color: #17324d; line-height: 1.6; }
+nav { position: sticky; top: 0; z-index: 1000; background: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+.logo { font-size: 24px; font-weight: bold; }
+nav a { color: #17324d; text-decoration: none; font-weight: bold; margin-left: 18px; }
+.hero { text-align: center; padding: 70px 20px; background: linear-gradient(135deg, #65d9ff, #a9efd0, #fff0a5); }
+.hero img { width: 180px; max-width: 80%; margin-bottom: 20px; }
+.hero h1 { font-size: 48px; margin-bottom: 15px; }
+.hero p { font-size: 20px; max-width: 700px; margin: auto; }
+.container { width: 90%; max-width: 1200px; margin: auto; }
+section { padding: 60px 0; }
+.section-title { text-align: center; font-size: 34px; margin-bottom: 15px; }
+.section-description { text-align: center; max-width: 750px; margin: 0 auto 35px; font-size: 18px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+.card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 5px 18px rgba(0,0,0,0.08); display: flex; flex-direction: column; }
+.card h3 { font-size: 21px; margin-bottom: 12px; }
+.card p { margin-bottom: 20px; flex-grow: 1; }
+.card a { display: inline-block; background: #17324d; color: white; text-decoration: none; padding: 12px 18px; border-radius: 12px; text-align: center; font-weight: bold; }
+.videos { background: #e8f8ff; }
+.video-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.video-card { background: white; padding: 15px; border-radius: 20px; box-shadow: 0 5px 18px rgba(0,0,0,0.08); text-align: center; }
+.video-card h3 { margin-bottom: 15px; }
+.video-card iframe { width: 100%; max-width: 420px; height: 600px; border: 0; border-radius: 20px; }
+.languages { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 30px; }
+.language { background: white; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 5px 18px rgba(0,0,0,0.08); }
+.language .emoji { font-size: 45px; margin-bottom: 10px; }
+.ai { background: #f0eaff; text-align: center; }
+.ai p { max-width: 750px; margin: auto; font-size: 18px; }
+footer { background: #17324d; color: white; text-align: center; padding: 35px 20px; }
 @media (max-width: 700px) {
-
-.hero {
-min-height: 520px;
-padding: 60px 20px;
+nav { flex-direction: column; gap: 10px; }
+nav a { margin-left: 8px; margin-right: 8px; }
+.hero h1 { font-size: 36px; }
+.hero p { font-size: 18px; }
+.video-card iframe { height: 560px; }
 }
-
-.hero h1 {
-font-size: 48px;
-}
-
-.hero h2 {
-font-size: 28px;
-}
-
-.hero p {
-font-size: 17px;
-}
-
-.section-title {
-font-size: 32px;
-}
-
-nav a {
-margin: 0 5px;
-font-size: 14px;
-}
-
-}
-
 </style>
 </head>
-
 <body>
 
-
-<!-- NAVEGACIÓN -->
-
 <nav>
-
-<div class="logo">
-✨ Tiny Wonders
-</div>
-
+<div class="logo">✨ Tiny Wonders</div>
 <div>
-
 <a href="#inicio">Inicio</a>
-
 <a href="#aventuras">Aventuras</a>
-
+<a href="#english">English</a>
 <a href="#videos">Videos</a>
-
 <a href="#idiomas">Idiomas</a>
-
 </div>
-
 </nav>
 
-
-<!-- HERO -->
-
-<header class="hero" id="inicio">
-
-<div class="hero-content">
-
-<h1>
-✨ Tiny Wonders ✨
-</h1>
-
-<div>
-
-<img
-src="1789423740367.png"
-alt="Tiny Wonders"
-style="width:220px; margin-top:20px;"
->
-
-</div>
-
-<h2>
-¡Pequeñas aventuras, grandes descubrimientos!
-</h2>
-
-<p>
-Acompaña a Tiny mientras descubre mundos mágicos,
-lugares increíbles y aventuras que parecen imposibles.
-</p>
-
-<a href="#aventuras" class="main-button">
-🚀 Explorar aventuras
-</a>
-
-</div>
-
-</header>
-
-
-<!-- AVENTURAS -->
+<section class="hero" id="inicio">
+<img src="1789423740367.png" alt="Tiny Wonders">
+<h1>✨ Tiny Wonders</h1>
+<p>Pequeñas aventuras, grandes descubrimientos.<br>Acompaña a Tiny mientras explora mundos increíbles.</p>
+</section>
 
 <section id="aventuras">
-
 <div class="container">
-
-<h2 class="section-title">
-🌎 Aventuras de Tiny
-</h2>
-
-<p class="section-description">
-Descubre algunos de los mundos extraordinarios
-que Tiny ha encontrado durante sus viajes.
-</p>
-
-
+<h2 class="section-title">🇪🇸 Aventuras de Tiny en Español</h2>
+<p class="section-description">Descubre las aventuras de Tiny en mundos increíbles, llenos de imaginación, diversión y grandes descubrimientos.</p>
 <div class="cards">
 
-
-<!-- 1 MINI CHEFS -->
-
 <article class="card">
-
-<div class="emoji">🍩</div>
-
-<h3>
-Tiny y sus mini chefs tienen un desafío delicioso
-</h3>
-
-<p>
-Tiny y sus pequeños chefs se enfrentan
-a un delicioso desafío lleno de diversión.
-</p>
-
-<a
-href="https://www.facebook.com/share/r/1GNJCLzVNm/"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-
-▶️ Ver en Facebook
-
-</a>
-
+<h3>🍩 Tiny y sus mini chefs tienen un desafío delicioso</h3>
+<p>Tiny y sus pequeños chefs enfrentan un divertido desafío para preparar una deliciosa creación gigante.</p>
+<a href="https://www.facebook.com/share/r/1GNJCLzVNm/" target="_blank" rel="noopener noreferrer">Ver aventura</a>
 </article>
 
-
-<!-- 2 FÁBRICA DE CARAMELOS -->
-
 <article class="card">
-
-<div class="emoji">🍭</div>
-
-<h3>
-Tiny descubre una fábrica de caramelos gigantes
-</h3>
-
-<p>
-Tiny entra en una increíble fábrica
-llena de caramelos gigantes y colores.
-</p>
-
-<a
-href="https://www.facebook.com/share/r/19YSeEgHTe/"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-
-▶️ Ver en Facebook
-
-</a>
-
+<h3>🍭 Tiny descubre una fábrica de caramelos gigantes</h3>
+<p>Tiny entra en una increíble fábrica de caramelos gigantes y descubre un mundo lleno de colores, dulces y sorpresas.</p>
+<a href="https://www.facebook.com/share/r/19YSeEgHTe/" target="_blank" rel="noopener noreferrer">Ver aventura</a>
 </article>
 
-
-<!-- 3 ESPACIO -->
-
 <article class="card">
-
-<div class="emoji">🌌</div>
-
-<h3>
-Tiny explora el espacio y encuentra algo increíble
-</h3>
-
-<p>
-Tiny viaja por el espacio y descubre
-un mundo lleno de estrellas y sorpresas.
-</p>
-
-<a
-href="https://www.facebook.com/share/r/1DktD6VwHZ/"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-
-▶️ Ver en Facebook
-
-</a>
-
+<h3>🌌 Tiny explora el espacio y encuentra algo increíble</h3>
+<p>Tiny viaja al espacio y descubre un lugar misterioso lleno de estrellas, planetas y aventuras sorprendentes.</p>
+<a href="https://www.facebook.com/share/r/1DktD6VwHZ/" target="_blank" rel="noopener noreferrer">Ver aventura</a>
 </article>
 
-
-<!-- 4 CASA SECRETA -->
-
 <article class="card">
-
-<div class="emoji">🌳</div>
-
-<h3>
-Tiny descubre una casa secreta dentro de un árbol gigante
-</h3>
-
-<p>
-Tiny encuentra una misteriosa casa escondida
-dentro de un árbol gigantesco.
-</p>
-
-<a
-href="https://www.facebook.com/share/r/1BuN8Xjoom/"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-
-▶️ Ver en Facebook
-
-</a>
-
+<h3>🌳 Tiny descubre una casa secreta dentro de un árbol gigante</h3>
+<p>Tiny encuentra una misteriosa casa escondida dentro de un enorme árbol y comienza una aventura increíble.</p>
+<a href="https://www.facebook.com/share/r/1BuN8Xjoom/" target="_blank" rel="noopener noreferrer">Ver aventura</a>
 </article>
 
-
-<!-- 5 TREN DULCE -->
-
 <article class="card">
-
-<div class="emoji">🌈🍬</div>
-
-<h3>
-Tiny se subió al tren más dulce del mundo
-</h3>
-
-<p>
-Tiny viaja en un increíble tren lleno
-de dulces, colores y diversión.
-</p>
-
-<a
-href="https://www.facebook.com/share/r/1HtAwGH4ag/"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-
-▶️ Ver en Facebook
-
-</a>
-
+<h3>🌈🍬 Tiny se subió al tren más dulce del mundo</h3>
+<p>Tiny aborda un increíble tren de dulces y viaja por un mundo lleno de colores, golosinas y sorpresas.</p>
+<a href="https://www.facebook.com/share/r/1HtAwGH4ag/" target="_blank" rel="noopener noreferrer">Ver aventura</a>
 </article>
 
-
-<!-- 6 RÍO DE CHOCOLATE -->
-
 <article class="card">
-
-<div class="emoji">🍫</div>
-
-<h3>
-Tiny encontró un río de chocolate
-</h3>
-
-<p>
-Tiny descubre un río completamente hecho
-de chocolate y comienza una aventura deliciosa.
-</p>
-
-<a
-href="https://www.facebook.com/share/r/19pocQxMZi/"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-
-▶️ Ver en Facebook
-
-</a>
-
+<h3>🍫 Tiny encontró un río de chocolate</h3>
+<p>Tiny descubre un increíble río de chocolate y explora un mundo completamente lleno de deliciosas sorpresas.</p>
+<a href="https://www.facebook.com/share/r/19pocQxMZi/" target="_blank" rel="noopener noreferrer">Ver aventura</a>
 </article>
 
-
-<!-- 7 CIUDAD CONGELADA -->
-
 <article class="card">
-
-<div class="emoji">🏙️❄️</div>
-
-<h3>
-Tiny encuentra una ciudad congelada en el tiempo
-</h3>
-
-<p>
-Tiny descubre una ciudad misteriosa
-donde todo parece haberse detenido en el tiempo.
-</p>
-
-<a
-href="https://youtube.com/shorts/1_JzWoH0AFk?si=T2zkEatJtuG2QX2H"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-
-▶️ Ver en YouTube
-
-</a>
-
+<h3>🏙️❄️ Tiny encuentra una ciudad congelada en el tiempo</h3>
+<p>Tiny descubre una ciudad misteriosa donde todo parece haberse quedado congelado en el tiempo.</p>
+<a href="https://youtube.com/shorts/1_JzWoH0AFk?si=T2zkEatJtuG2QX2H" target="_blank" rel="noopener noreferrer">Ver aventura</a>
 </article>
 
-
-<!-- 8 MONTAÑA DE CRISTAL -->
-
 <article class="card">
-
-<div class="emoji">💎✨</div>
-
-<h3>
-Tiny descubre una montaña de cristal
-</h3>
-
-<p>
-Tiny encuentra una impresionante montaña
-de cristal llena de brillo y magia.
-</p>
-
-<a
-href="https://youtube.com/shorts/jR6tz95Go4w?si=2TnPFDNmRIUAY7o_"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-
-▶️ Ver en YouTube
-
-</a>
-
+<h3>💎✨ Tiny descubre una montaña de cristal</h3>
+<p>Tiny encuentra una impresionante montaña de cristal y comienza una aventura llena de magia y descubrimientos.</p>
+<a href="https://youtube.com/shorts/jR6tz95Go4w?si=2TnPFDNmRIUAY7o_" target="_blank" rel="noopener noreferrer">Ver aventura</a>
 </article>
 
-
-<!-- 9 DINOSAURIOS BEBÉS -->
-
 <article class="card">
-
-<div class="emoji">🦕</div>
-
-<h3>
-Tiny descubre un parque lleno de dinosaurios bebés
-</h3>
-
-<p>
-Tiny llega a un parque extraordinario
-donde descubre adorables dinosaurios bebés.
-</p>
-
-<a
-href="https://youtube.com/shorts/y-oA5xnagZY?si=GZ0Nd7jo5qjgQswq"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-
-▶️ Ver en YouTube
-
-</a>
-
+<h3>🦕 Tiny descubre un parque lleno de dinosaurios bebés</h3>
+<p>Tiny explora un increíble parque lleno de pequeños dinosaurios y vive una aventura inolvidable.</p>
+<a href="https://youtube.com/shorts/y-oA5xnagZY?si=GZ0Nd7jo5qjgQswq" target="_blank" rel="noopener noreferrer">Ver aventura</a>
 </article>
-
 
 </div>
-
 </div>
-
 </section>
 
+<section id="english">
+<div class="container">
+<h2 class="section-title">🇺🇸 Tiny Wonders Adventures in English</h2>
+<p class="section-description">Discover Tiny's amazing adventures, magical worlds, giant foods and incredible discoveries in English.</p>
+<div class="cards">
 
-```html
-<!-- VIDEOS -->
+<article class="card">
+<h3>🍕 Why Does Pizza Dough Rise? The Tiny Secret Inside! 🔬</h3>
+<p>Tiny discovers the little secret that makes pizza dough rise in a fascinating adventure.</p>
+<a href="https://www.facebook.com/share/v/1CcYt95uuK/" target="_blank" rel="noopener noreferrer">Watch adventure</a>
+</article>
+
+<article class="card">
+<h3>🍔 Mini Chefs Make a GIANT Burger! 🤯🍔</h3>
+<p>Tiny and the mini chefs take on an enormous burger-making challenge full of fun.</p>
+<a href="https://www.facebook.com/share/v/19VHNeDQ2e/" target="_blank" rel="noopener noreferrer">Watch adventure</a>
+</article>
+
+<article class="card">
+<h3>🎂 Tiny Bakers, Giant Cake Magic! 🎂✨ | Tiny Wonders</h3>
+<p>Tiny and the little bakers create an amazing giant cake in a magical baking adventure.</p>
+<a href="https://www.facebook.com/share/r/18CC5qmerc/" target="_blank" rel="noopener noreferrer">Watch adventure</a>
+</article>
+
+<article class="card">
+<h3>🍿 How Does Popcorn Pop? 🍿 | Tiny Wonders</h3>
+<p>Tiny discovers the fascinating secret behind the tiny kernels that suddenly become popcorn.</p>
+<a href="https://www.facebook.com/share/r/1KGoKst31n/" target="_blank" rel="noopener noreferrer">Watch adventure</a>
+</article>
+
+<article class="card">
+<h3>🍩 The mini-chefs are making a HUGE donut! 🍩👩‍🍳👨‍🍳✨</h3>
+<p>Tiny and the mini chefs create an enormous donut in a delicious and colorful adventure.</p>
+<a href="https://www.facebook.com/share/r/14tNePTKZkS/" target="_blank" rel="noopener noreferrer">Watch adventure</a>
+</article>
+
+<article class="card">
+<h3>🌲 Big Adventures in the Wild | Tiny Wonders</h3>
+<p>Tiny heads into the wild and discovers an exciting world full of unexpected surprises.</p>
+<a href="https://www.facebook.com/share/r/1HQP9XnrGW/" target="_blank" rel="noopener noreferrer">Watch adventure</a>
+</article>
+
+<article class="card">
+<h3>🍦 Giant Ice Cream Adventure! 🍦 | Tiny Wonders</h3>
+<p>Tiny discovers a giant ice cream adventure filled with colorful treats and surprises.</p>
+<a href="https://www.facebook.com/share/r/1Dk39ABSde/" target="_blank" rel="noopener noreferrer">Watch adventure</a>
+</article>
+
+<article class="card">
+<h3>🌊 Tiny Explores a Magical Underwater World</h3>
+<p>Tiny dives into a magical underwater world filled with colorful creatures and discoveries.</p>
+<a href="https://www.facebook.com/share/r/1AFnYnYtsy/" target="_blank" rel="noopener noreferrer">Watch adventure</a>
+</article>
+
+<article class="card">
+<h3>☁️🌈 Tiny’s Adventure in the Cloud Kingdom! ☁️🌈</h3>
+<p>Tiny travels high above the clouds and discovers a magical kingdom in the sky.</p>
+<a href="https://www.facebook.com/share/r/19Po7SoWuN/" target="_blank" rel="noopener noreferrer">Watch adventure</a>
+</article>
+
+<article class="card">
+<h3>😱 Tiny Found a Lost City Beneath the Desert! 🏜️🏛️</h3>
+<p>Tiny discovers a mysterious lost city hidden beneath the desert sands.</p>
+<a href="https://www.facebook.com/share/r/19vrobwTrY/" target="_blank" rel="noopener noreferrer">Watch adventure</a>
+</article>
+
+<article class="card">
+<h3>🌈 Tiny Discovers a World Made of Giant Bubbles! 🫧</h3>
+<p>Tiny enters an incredible world where everything is surrounded by giant colorful bubbles.</p>
+<a href="https://www.facebook.com/share/v/19miUyRvsU/" target="_blank" rel="noopener noreferrer">Watch adventure</a>
+</article>
+
+<article class="card">
+<h3>🎄 Tiny’s Magical Christmas Adventure! 🎅✨</h3>
+<p>Tiny embarks on a magical Christmas adventure filled with wonder, lights and holiday surprises.</p>
+<a href="https://www.facebook.com/share/v/18NiLoPJQa/" target="_blank" rel="noopener noreferrer">Watch adventure</a>
+</article>
+
+</div>
+</div>
+</section>
 
 <section class="videos" id="videos">
-
 <div class="container">
-
-<h2 class="section-title">
-🎬 Videos de Tiny Wonders
-</h2>
-
-<p class="section-description">
-Mira algunas de las aventuras más recientes de Tiny.
-</p>
-
+<h2 class="section-title">🎬 Tiny Wonders Videos</h2>
+<p class="section-description">Watch some of Tiny's adventures directly here.</p>
 <div class="video-box">
 
+<div class="video-card">
+<h3>🏙️❄️ Tiny Finds a Frozen City</h3>
+<iframe src="https://www.youtube.com/embed/1_JzWoH0AFk" title="Tiny Finds a Frozen City" allowfullscreen></iframe>
+</div>
 
-<!-- VIDEO 1 -->
+<div class="video-card">
+<h3>💎✨ Tiny Discovers a Crystal Mountain</h3>
+<iframe src="https://www.youtube.com/embed/jR6tz95Go4w" title="Tiny Discovers a Crystal Mountain" allowfullscreen></iframe>
+</div>
 
-<article class="video-card">
-
-<iframe
-src="https://www.youtube.com/embed/1_JzWoH0AFk"
-title="Tiny encuentra una ciudad congelada en el tiempo"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-
-<h3>
-Tiny encuentra una ciudad congelada en el tiempo
-</h3>
-
-<p>
-Una ciudad misteriosa donde todo quedó
-congelado en el tiempo.
-</p>
-
-<a
-href="https://youtube.com/shorts/1_JzWoH0AFk?si=T2zkEatJtuG2QX2H"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-
-▶️ Ver en YouTube
-
-</a>
-
-</article>
-
-
-<!-- VIDEO 2 -->
-
-<article class="video-card">
-
-<iframe
-src="https://www.youtube.com/embed/jR6tz95Go4w"
-title="Tiny descubre una montaña de cristal"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-
-<h3>
-Tiny descubre una montaña de cristal
-</h3>
-
-<p>
-Tiny descubre una montaña increíble
-hecha completamente de cristal.
-</p>
-
-<a
-href="https://youtube.com/shorts/jR6tz95Go4w?si=2TnPFDNmRIUAY7o_"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-
-▶️ Ver en YouTube
-
-</a>
-
-</article>
-
-
-<!-- VIDEO 3 -->
-
-<article class="video-card">
-
-<iframe
-src="https://www.youtube.com/embed/y-oA5xnagZY"
-title="Tiny descubre un parque lleno de dinosaurios bebés"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-
-<h3>
-Tiny descubre un parque lleno de dinosaurios bebés
-</h3>
-
-<p>
-Una aventura llena de pequeños dinosaurios
-y momentos increíbles.
-</p>
-
-<a
-href="https://youtube.com/shorts/y-oA5xnagZY?si=GZ0Nd7jo5qjgQswq"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-
-▶️ Ver en YouTube
-
-</a>
-
-</article>
-
-
+<div class="video-card">
+<h3>🦕 Tiny Discovers a Baby Dinosaur Park</h3>
+<iframe src="https://www.youtube.com/embed/y-oA5xnagZY" title="Tiny Discovers a Baby Dinosaur Park" allowfullscreen></iframe>
 </div>
 
 </div>
-
+</div>
 </section>
-```
-
-
-<!-- IDIOMAS -->
 
 <section id="idiomas">
-
 <div class="container">
-
-<h2 class="section-title">
-🌎 Tiny Wonders en varios idiomas
-</h2>
-
-<p class="section-description">
-Tiny Wonders está creciendo para llegar
-a pequeños exploradores de todo el mundo.
-</p>
-
-
+<h2 class="section-title">🌎 Tiny Wonders en varios idiomas</h2>
+<p class="section-description">Tiny Wonders está creciendo para llegar a pequeños exploradores de todo el mundo.</p>
 <div class="languages">
 
+<div class="language">
+<div class="emoji">🇪🇸</div>
+<h3>Español</h3>
+<p>Aventuras de Tiny en español.</p>
+</div>
 
 <div class="language">
-
-<div class="emoji">
-🇪🇸
-</div>
-
-<h3>
-Español
-</h3>
-
-<p>
-Aventuras de Tiny en español.
-</p>
-
-</div>
-
-
-<div class="language">
-
-<div class="emoji">
-🇺🇸
-</div>
-
-<h3>
-English
-</h3>
-
-<p>
-Tiny Wonders adventures in English.
-</p>
-
-</div>
-
-
+<div class="emoji">🇺🇸</div>
+<h3>English</h3>
+<p>Tiny Wonders adventures in English.</p>
 </div>
 
 </div>
-
+</div>
 </section>
-
-
-<!-- CONTENIDO CON IA -->
 
 <section class="ai">
-
 <div class="container">
-
-<h2 class="section-title">
-🤖 Contenido creado con IA
-</h2>
-
-<p>
-Las aventuras de Tiny Wonders utilizan herramientas
-de inteligencia artificial para crear mundos,
-personajes y experiencias visuales.
-</p>
-
+<h2 class="section-title">🤖 Contenido creado con IA</h2>
+<p>Las aventuras de Tiny Wonders utilizan herramientas de inteligencia artificial para crear mundos, personajes y experiencias visuales.</p>
 </div>
-
 </section>
 
-
-<!-- FOOTER -->
-
 <footer>
-
-<p>
-✨ Tiny Wonders
-</p>
-
-<p>
-Pequeñas aventuras, grandes descubrimientos.
-</p>
-
-<p>
-© 2026 Tiny Wonders
-</p>
-
+<p>✨ Tiny Wonders</p>
+<p>Pequeñas aventuras, grandes descubrimientos.</p>
+<p>© 2026 Tiny Wonders</p>
 </footer>
-
 
 </body>
 </html>
-```
