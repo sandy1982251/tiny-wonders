@@ -25,7 +25,20 @@ section { padding: 60px 0; }
 .section-title { text-align: center; font-size: 34px; margin-bottom: 15px; }
 .section-description { text-align: center; max-width: 750px; margin: 0 auto 35px; font-size: 18px; }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-.card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 5px 18px rgba(0,0,0,0.08); display: flex; flex-direction: column; }
+.card {
+background: white;
+border-radius: 20px;
+padding: 25px;
+box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+display: flex;
+flex-direction: column;
+transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+transform: translateY(-6px);
+box-shadow: 0 10px 25px rgba(0,0,0,0.14);
+}
 .card h3 { font-size: 21px; margin-bottom: 12px; }
 .card p { margin-bottom: 20px; flex-grow: 1; }
 .card a { display: inline-block; background: #17324d; color: white; text-decoration: none; padding: 12px 18px; border-radius: 12px; text-align: center; font-weight: bold; }
